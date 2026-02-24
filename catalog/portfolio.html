@@ -6,23 +6,140 @@
   <title>Portfolio — Aman Malik</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    .placeholder {
-      display: flex;
+    /* ── Hero ── */
+    .portfolio-hero {
+      padding: 140px 48px 60px;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      background-color:#e1e1e1; 
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
       align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding-top: 90px;
     }
 
-    .placeholder p {
+    .hero-text h1 {
       font-family: var(--font-display);
-      font-size: 1.5rem;
+      font-size: 2.2rem;
+      font-weight: 200;
+      line-height: 1.3;
+      color: var(--color-text);
+      letter-spacing: 0.01em;
+    }
+
+    .hero-text .subtitle {
+      margin-top: 24px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
       font-weight: 300;
       color: var(--color-text-muted);
+      letter-spacing: 0.03em;
+    }
+
+    .hero-image {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* ── Projects Grid ── */
+    .projects-grid {
+      padding: 40px 48px 80px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px;
+    }
+
+    .project-card {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .project-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .project-card:nth-child(even) {
+      transition-delay: 0.12s;
+    }
+
+    .project-card a {
+      display: block;
+    }
+
+    .project-thumb {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .project-card:hover .project-thumb img {
+      transform: scale(1.03);
+    }
+
+    .project-title {
+      margin-top: 16px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--color-text);
       letter-spacing: 0.02em;
+      text-align: center;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .portfolio-hero {
+        padding: 100px 24px 40px;
+        background-color:#b1aeab; 
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .hero-text h1 {
+        font-size: 1.8rem;
+      }
+
+      .projects-grid {
+        padding: 32px 24px 60px;
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .portfolio-hero {
+        padding: 80px 18px 32px;
+        background-color:#b1aeab; 
+      }
+
+      .hero-text h1 {
+        font-size: 1.5rem;
+      }
+
+      .projects-grid {
+        padding: 24px 18px 40px;
+        gap: 28px;
+      }
     }
   </style>
 </head>
@@ -44,7 +161,7 @@
       <a href="https://instagram.com/acinematix" target="_blank" rel="noopener" aria-label="Instagram">
         <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
       </a>
-      <a href="mailto:your@email.com" aria-label="Email">
+      <a href="mailto:acinematix@gmail.com" aria-label="Email">
         <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
       </a>
     </nav>
@@ -62,17 +179,58 @@
       <a href="https://instagram.com/acinematix" target="_blank" rel="noopener" aria-label="Instagram">
         <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
       </a>
-      <a href="mailto:your@email.com" aria-label="Email">
+      <a href="mailto:acinematix@gmail.com" aria-label="Email">
         <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
       </a>
     </div>
   </div>
 
-  <main class="placeholder">
-    <p>Coming soon</p>
+  <!-- Hero -->
+  <section class="portfolio-hero">
+    <div class="hero-text">
+      <h1>Self-initiated projects where curiosity leads. A mix of photo and video, each series built around a story I couldn't leave alone.</h1>
+      <p class="subtitle">Long-form work, updated as it unfolds.</p>
+    </div>
+    <div class="hero-image">
+      <img src="../images/portfolio/hero.jpg" alt="Portfolio hero">
+    </div>
+  </section>
+
+  <!--
+    PROJECTS GRID
+    To add a new project: copy a <div class="project-card"> block,
+    update the link, image, and title. They auto-flow into 2 columns.
+  -->
+  <main class="projects-grid">
+
+    <div class="project-card">
+      <a href="./portfolio/india-project.html">
+        <div class="project-thumb">
+          <img src="../images/portfolio/india-project.jpg" alt="The India Project">
+        </div>
+        <p class="project-title">The India Project</p>
+      </a>
+    </div>
+
+    <div class="project-card">
+      <a href="./portfolio/measure-of-it-all.html">
+        <div class="project-thumb">
+          <img src="../images/portfolio/measure-of-it-all.jpg" alt="The Measure Of It All">
+        </div>
+        <p class="project-title">The Measure Of It All</p>
+      </a>
+    </div>
+
   </main>
 
   <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.project-card').forEach(item => observer.observe(item));
+
     function toggleMenu() {
       document.querySelector('.hamburger').classList.toggle('open');
       const nav = document.getElementById('mobileNav');

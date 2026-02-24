@@ -9,9 +9,9 @@
 :root {
   --color-bg: #ffffff;
   --color-text: #2c2c2c;
-  --color-text-muted: #7a7a7a;
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Outfit', sans-serif;
+  --color-text-muted: #555555;
+  --font-display: 'Libre Baskerville', Georgia, serif;
+  --font-body: 'Karla', sans-serif;
 }
 
 /* ── Base ── */
