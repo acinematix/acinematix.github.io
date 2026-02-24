@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../css/style.css">
   <style>
-    /* ── Intro ── */
     .project-intro {
       padding: 140px 48px 80px;
       max-width: 1400px;
@@ -33,12 +32,10 @@
       letter-spacing: 0.03em;
     }
 
-    /* ── Section: Hero + Gallery ── */
     .project-section {
       margin-bottom: 0;
     }
 
-    /* Hero block — white bg */
     .section-hero {
       padding: 60px 48px;
       max-width: 1400px;
@@ -78,7 +75,6 @@
       line-height: 1.6;
     }
 
-    /* Gallery block — darker bg */
     .section-gallery-wrap {
       background-color: #ffffff;
       padding: 40px 0;
@@ -89,8 +85,19 @@
       margin: 0 auto;
       padding: 0 24px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
+    }
+
+    .section-gallery + .section-gallery {
+  margin-top: 16px;
+}
+
+    .gallery-3col {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-4col {
+      grid-template-columns: repeat(4, 1fr);
     }
 
     .section-gallery .gallery-img {
@@ -117,7 +124,6 @@
       transform: scale(1.03);
     }
 
-    /* ── Responsive ── */
     @media (max-width: 900px) {
       .project-intro {
         padding: 100px 24px 48px;
@@ -135,8 +141,15 @@
 
       .section-gallery {
         padding: 0 16px;
-        grid-template-columns: repeat(2, 1fr);
         gap: 10px;
+      }
+
+      .gallery-3col {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-4col {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -159,8 +172,12 @@
 
       .section-gallery {
         padding: 0 12px;
-        grid-template-columns: 1fr;
         gap: 8px;
+      }
+
+      .gallery-3col,
+      .gallery-4col {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -207,22 +224,10 @@
     </div>
   </div>
 
-  <!-- Intro -->
   <section class="project-intro">
     <h1>Street and portrait work from India, shot over multiple trips. My mother tongue opens the door — it breaks the barrier between me and the people I photograph, and lets their stories come through. What's left is conversation, color, texture, and the quiet beauty of everyday life. The country moves fast — loud, layered, relentless. I look to slow down and sit inside it, catching the moments that live between the chaos.</h1>
     <p class="subtitle">Eventually, this collection will live as a photo book — for now, it grows here.</p>
   </section>
-
-  <!--
-    ============================================================
-    PROJECT SECTIONS
-    To add a new section, copy everything between
-    "BEGIN SECTION" and "END SECTION" comments, then update:
-    1. The hero image src and alt
-    2. The section title (h2) and subtitle (p)
-    3. The gallery images (add or remove gallery-img divs as needed)
-    ============================================================
-  -->
 
   <!-- ======== BEGIN SECTION: Kushti Akhada ======== -->
   <div class="project-section">
@@ -237,16 +242,16 @@
     </div>
 
     <div class="section-gallery-wrap">
-      <div class="section-gallery">
+      <div class="section-gallery gallery-3col">
         <div class="gallery-img"><img src="../../images/portfolio/india-project/kushti-1.jpg" alt="Kushti Akhada" loading="lazy"></div>
         <div class="gallery-img"><img src="../../images/portfolio/india-project/kushti-2.jpg" alt="Kushti Akhada" loading="lazy"></div>
         <div class="gallery-img"><img src="../../images/portfolio/india-project/kushti-3.jpg" alt="Kushti Akhada" loading="lazy"></div>
+      </div>
+      <div class="section-gallery gallery-4col">
         <div class="gallery-img"><img src="../../images/portfolio/india-project/kushti-4.jpg" alt="Kushti Akhada" loading="lazy"></div>
         <div class="gallery-img"><img src="../../images/portfolio/india-project/kushti-5.jpg" alt="Kushti Akhada" loading="lazy"></div>
         <div class="gallery-img"><img src="../../images/portfolio/india-project/kushti-6.jpg" alt="Kushti Akhada" loading="lazy"></div>
         <div class="gallery-img"><img src="../../images/portfolio/india-project/kushti-7.jpg" alt="Kushti Akhada" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/kushti-8.jpg" alt="Kushti Akhada" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/kushti-9.jpg" alt="Kushti Akhada" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -265,19 +270,25 @@
     </div>
 
     <div class="section-gallery-wrap">
-      <div class="section-gallery">
+      <div class="section-gallery gallery-3col">
         <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-1.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
         <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-2.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
         <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-3.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
         <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-4.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
         <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-5.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
         <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-6.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
+        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-7.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
+        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-8.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
+        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-9.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
+        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-10.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
+        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-11.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
+        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-12.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
       </div>
     </div>
   </div>
   <!-- ======== END SECTION: Dhobi Ghatt ======== -->
 
-   <!-- ======== BEGIN SECTION: Sasoon Dock ======== -->
+  <!-- ======== BEGIN SECTION: Sasoon Dock ======== -->
   <div class="project-section">
     <div class="section-hero">
       <div class="section-hero-image">
@@ -290,7 +301,7 @@
     </div>
 
     <div class="section-gallery-wrap">
-      <div class="section-gallery">
+      <div class="section-gallery gallery-3col">
         <div class="gallery-img"><img src="../../images/portfolio/india-project/sasoon-1.jpg" alt="Sasoon Dock" loading="lazy"></div>
         <div class="gallery-img"><img src="../../images/portfolio/india-project/sasoon-2.jpg" alt="Sasoon Dock" loading="lazy"></div>
         <div class="gallery-img"><img src="../../images/portfolio/india-project/sasoon-3.jpg" alt="Sasoon Dock" loading="lazy"></div>
@@ -302,18 +313,16 @@
   </div>
   <!-- ======== END SECTION: Sasoon Dock ======== -->
 
-
   <script>
-    // Scroll reveal for gallery images
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Stagger within each gallery row
           const gallery = entry.target.closest('.section-gallery');
           if (gallery) {
             const items = Array.from(gallery.querySelectorAll('.gallery-img'));
             const index = items.indexOf(entry.target);
-            const col = index % 3;
+            const cols = gallery.classList.contains('gallery-4col') ? 4 : 3;
+            const col = index % cols;
             entry.target.style.transitionDelay = (col * 0.1) + 's';
           }
           entry.target.classList.add('visible');
