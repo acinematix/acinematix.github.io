@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portrait — Aman Malik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── Slideshow ── */
+    .slideshow {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 90px;
+    }
+
+    .slides-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide {
+      position: absolute;
+      max-width: 70%;
+      max-height: 85%;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      pointer-events: none;
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .slide img {
+      max-width: 100%;
+      max-height: calc(100vh - 140px);
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* ── Arrows ── */
+    .arrow {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 50;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 20px;
+      color: var(--color-text-muted);
+      transition: color 0.3s ease;
+      font-size: 2rem;
+      line-height: 1;
+      user-select: none;
+    }
+
+    .arrow:hover {
+      color: var(--color-text);
+    }
+
+    .arrow-left {
+      left: 24px;
+    }
+
+    .arrow-right {
+      right: 24px;
+    }
+
+    /* ── Counter ── */
+    .slide-counter {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 900px) {
+      .slide {
+        max-width: 90%;
+      }
+      .arrow { padding: 12px; font-size: 1.5rem; }
+      .arrow-left { left: 8px; }
+      .arrow-right { right: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html" class="logo">Aman Malik</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <div class="catalog-dropdown">
+        <a href="#" class="active">Catalog</a>
+        <div class="catalog-menu">
+          <a href="portrait.html">Portrait</a>
+          <a href="landscape.html">Landscape</a>
+          <a href="street.html">Street</a>
+          <a href="portfolio.html">Portfolio</a>
+        </div>
+      </div>
+      <a href="https://instagram.com/a_cinematix" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="mailto:acinematix@gmail.com" aria-label="Email">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+      </a>
+    </nav>
+    <button class="hamburger" aria-label="Menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="../index.html" onclick="toggleMenu()">Home</a>
+    <a href="../about.html" onclick="toggleMenu()">About</a>
+    <a href="portrait.html" class="mobile-sub" onclick="toggleMenu()">Portrait</a>
+    <a href="landscape.html" class="mobile-sub" onclick="toggleMenu()">Landscape</a>
+    <a href="street.html" class="mobile-sub" onclick="toggleMenu()">Street</a>
+    <a href="portfolio.html" class="mobile-sub" onclick="toggleMenu()">Portfolio</a>
+    <div class="mobile-nav-icons">
+      <a href="https://instagram.com/a_cinematix" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="mailto:acinematix@gmail.com" aria-label="Email">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Slideshow -->
+  <main class="slideshow">
+    <div class="slides-container">
+      <!--
+        TO ADD MORE PHOTOS: just add more <div class="slide"> blocks below.
+        The slideshow auto-detects the total count.
+      -->
+      <div class="slide active"><img src="../images/portrait/photo1.jpg" alt="Portrait 1"></div>
+      <div class="slide"><img src="../images/portrait/photo2.jpg" alt="Portrait 2"></div>
+      <div class="slide"><img src="../images/portrait/photo3.jpg" alt="Portrait 3"></div>
+      <div class="slide"><img src="../images/portrait/photo4.jpg" alt="Portrait 4"></div>
+      <div class="slide"><img src="../images/portrait/photo5.jpg" alt="Portrait 5"></div>
+    </div>
+  </main>
+
+  <button class="arrow arrow-left" onclick="changeSlide(-1)" aria-label="Previous">&#8249;</button>
+  <button class="arrow arrow-right" onclick="changeSlide(1)" aria-label="Next">&#8250;</button>
+  <div class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">5</span></div>
+
+  <script>
+    let current = 0;
+    const slides = document.querySelectorAll('.slide');
+    const total = slides.length;
+    document.getElementById('totalSlides').textContent = total;
+
+    function changeSlide(dir) {
+      slides[current].classList.remove('active');
+      current = (current + dir + total) % total;
+      slides[current].classList.add('active');
+      document.getElementById('currentSlide').textContent = current + 1;
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') changeSlide(-1);
+      if (e.key === 'ArrowRight') changeSlide(1);
+    });
+
+    function toggleMenu() {
+      document.querySelector('.hamburger').classList.toggle('open');
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('open');
+      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+    }
+  </script>
+</body>
+</html>

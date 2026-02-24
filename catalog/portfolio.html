@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Aman Malik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Outfit:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding-top: 90px;
+    }
+
+    .placeholder p {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--color-text-muted);
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html" class="logo">Aman Malik</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">About</a>
+      <div class="catalog-dropdown">
+        <a href="#" class="active">Catalog</a>
+        <div class="catalog-menu">
+          <a href="portrait.html">Portrait</a>
+          <a href="landscape.html">Landscape</a>
+          <a href="street.html">Street</a>
+          <a href="portfolio.html">Portfolio</a>
+        </div>
+      </div>
+      <a href="https://instagram.com/acinematix" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="mailto:your@email.com" aria-label="Email">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+      </a>
+    </nav>
+    <button class="hamburger" aria-label="Menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="../index.html" onclick="toggleMenu()">Home</a>
+    <a href="../about.html" onclick="toggleMenu()">About</a>
+    <a href="portrait.html" class="mobile-sub" onclick="toggleMenu()">Portrait</a>
+    <a href="landscape.html" class="mobile-sub" onclick="toggleMenu()">Landscape</a>
+    <a href="street.html" class="mobile-sub" onclick="toggleMenu()">Street</a>
+    <a href="portfolio.html" class="mobile-sub" onclick="toggleMenu()">Portfolio</a>
+    <div class="mobile-nav-icons">
+      <a href="https://instagram.com/acinematix" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="mailto:your@email.com" aria-label="Email">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <main class="placeholder">
+    <p>Coming soon</p>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.hamburger').classList.toggle('open');
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('open');
+      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+    }
+  </script>
+</body>
+</html>
