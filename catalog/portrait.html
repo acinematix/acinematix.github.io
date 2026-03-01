@@ -9,32 +9,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <style>
-    /* ── Slideshow ── */
     .slideshow {
-      position: fixed;
-      inset: 0;
+      position: relative;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-top: 90px;
+      padding: 100px 80px 120px;
+      gap: 24px;
     }
 
     .slides-container {
       position: relative;
-      width: 100%;
-      height: 100%;
+      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
+      min-height: calc(100vh - 220px);
     }
 
     .slide {
       position: absolute;
-      max-width: 70%;
-      max-height: 85%;
+      max-width: 100%;
+      max-height: 100%;
       opacity: 0;
       transition: opacity 0.6s ease;
       pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .slide.active {
@@ -43,18 +46,18 @@
     }
 
     .slide img {
-      max-width: 100%;
-      max-height: calc(100vh - 140px);
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
-    }
+  max-width: 100%;
+  max-height: calc(100vh - 140px);
+  object-fit: contain;
+  display: block;
+}
 
-    /* ── Arrows ── */
     .arrow {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
+      position: relative;
+      top: auto;
+      transform: none;
+      flex-shrink: 0;
+      align-self: center;
       z-index: 50;
       background: none;
       border: none;
@@ -71,34 +74,20 @@
       color: var(--color-text);
     }
 
-    .arrow-left {
-      left: 24px;
-    }
-
-    .arrow-right {
-      right: 24px;
-    }
-
-    /* ── Counter ── */
-    .slide-counter {
-      position: fixed;
-      bottom: 32px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      font-weight: 300;
-      color: var(--color-text-muted);
-      letter-spacing: 0.1em;
-    }
-
     @media (max-width: 900px) {
-      .slide {
-        max-width: 90%;
+      .slideshow {
+        padding: 100px 16px 100px;
+        gap: 8px;
       }
-      .arrow { padding: 12px; font-size: 1.5rem; }
-      .arrow-left { left: 8px; }
-      .arrow-right { right: 8px; }
+
+      .arrow {
+        padding: 12px;
+        font-size: 1.5rem;
+      }
+
+      .slide img {
+        max-height: calc(100vh - 240px);
+      }
     }
   </style>
 </head>
@@ -144,39 +133,71 @@
     </div>
   </div>
 
-  <!-- Slideshow -->
   <main class="slideshow">
+    <button class="arrow" onclick="changeSlide(-1)" aria-label="Previous">&#8249;</button>
     <div class="slides-container">
-      <!--
-        TO ADD MORE PHOTOS: just add more <div class="slide"> blocks below.
-        The slideshow auto-detects the total count.
-      -->
       <div class="slide active"><img src="../images/portrait/photo1.jpg" alt="Portrait 1"></div>
       <div class="slide"><img src="../images/portrait/photo2.jpg" alt="Portrait 2"></div>
       <div class="slide"><img src="../images/portrait/photo3.jpg" alt="Portrait 3"></div>
       <div class="slide"><img src="../images/portrait/photo4.jpg" alt="Portrait 4"></div>
       <div class="slide"><img src="../images/portrait/photo5.jpg" alt="Portrait 5"></div>
+      <div class="slide"><img src="../images/portrait/photo6.jpg" alt="Portrait 6"></div>
+      <div class="slide"><img src="../images/portrait/photo7.jpg" alt="Portrait 7"></div>
+      <div class="slide"><img src="../images/portrait/photo8.jpg" alt="Portrait 8"></div>
+      <div class="slide"><img src="../images/portrait/photo9.jpg" alt="Portrait 9"></div>
+      <div class="slide"><img src="../images/portrait/photo10.jpg" alt="Portrait 10"></div>
+      <div class="slide"><img src="../images/portrait/photo11.jpg" alt="Portrait 11"></div>
+      <div class="slide"><img src="../images/portrait/photo12.jpg" alt="Portrait 12"></div>
+      <div class="slide"><img src="../images/portrait/photo13.jpg" alt="Portrait 13"></div>
+      <div class="slide"><img src="../images/portrait/photo14.jpg" alt="Portrait 14"></div>
+      <div class="slide"><img src="../images/portrait/photo15.jpg" alt="Portrait 15"></div>
+      <div class="slide"><img src="../images/portrait/photo16.jpg" alt="Portrait 16"></div>
+      <div class="slide"><img src="../images/portrait/photo17.jpg" alt="Portrait 17"></div>
+      <div class="slide"><img src="../images/portrait/photo18.jpg" alt="Portrait 18"></div>
+      <div class="slide"><img src="../images/portrait/photo19.jpg" alt="Portrait 19"></div>
+      <div class="slide"><img src="../images/portrait/photo20.jpg" alt="Portrait 20"></div>
+      <div class="slide"><img src="../images/portrait/photo21.jpg" alt="Portrait 21"></div>
+      <div class="slide"><img src="../images/portrait/photo22.jpg" alt="Portrait 22"></div>
+      <div class="slide"><img src="../images/portrait/photo23.jpg" alt="Portrait 23"></div>
+      <div class="slide"><img src="../images/portrait/photo24.jpg" alt="Portrait 24"></div>
+      <div class="slide"><img src="../images/portrait/photo25.jpg" alt="Portrait 25"></div>
+      <div class="slide"><img src="../images/portrait/photo26.jpg" alt="Portrait 26"></div>
+      <div class="slide"><img src="../images/portrait/photo27.jpg" alt="Portrait 27"></div>
+      <div class="slide"><img src="../images/portrait/photo28.jpg" alt="Portrait 28"></div>
+      <div class="slide"><img src="../images/portrait/photo29.jpg" alt="Portrait 29"></div>
+      <div class="slide"><img src="../images/portrait/photo30.jpg" alt="Portrait 30"></div>
+      <div class="slide"><img src="../images/portrait/photo31.jpg" alt="Portrait 31"></div>
+      <div class="slide"><img src="../images/portrait/photo32.jpg" alt="Portrait 32"></div>
+      <div class="slide"><img src="../images/portrait/photo33.jpg" alt="Portrait 33"></div>
+      <div class="slide"><img src="../images/portrait/photo34.jpg" alt="Portrait 34"></div>
+      <div class="slide"><img src="../images/portrait/photo35.jpg" alt="Portrait 35"></div>
+      <div class="slide"><img src="../images/portrait/photo36.jpg" alt="Portrait 36"></div>
+      <div class="slide"><img src="../images/portrait/photo37.jpg" alt="Portrait 37"></div>
+      <div class="slide"><img src="../images/portrait/photo38.jpg" alt="Portrait 38"></div>
+      <div class="slide"><img src="../images/portrait/photo39.jpg" alt="Portrait 39"></div>
+      <div class="slide"><img src="../images/portrait/photo40.jpg" alt="Portrait 40"></div>
+      <div class="slide"><img src="../images/portrait/photo41.jpg" alt="Portrait 41"></div>
+      <div class="slide"><img src="../images/portrait/photo42.jpg" alt="Portrait 42"></div>
+      <div class="slide"><img src="../images/portrait/photo43.jpg" alt="Portrait 43"></div>
+      <div class="slide"><img src="../images/portrait/photo44.jpg" alt="Portrait 44"></div>
+      <div class="slide"><img src="../images/portrait/photo45.jpg" alt="Portrait 45"></div>
+      <div class="slide"><img src="../images/portrait/photo46.jpg" alt="Portrait 46"></div>
+      <div class="slide"><img src="../images/portrait/photo47.jpg" alt="Portrait 47"></div>
     </div>
+    <button class="arrow" onclick="changeSlide(1)" aria-label="Next">&#8250;</button>
   </main>
-
-  <button class="arrow arrow-left" onclick="changeSlide(-1)" aria-label="Previous">&#8249;</button>
-  <button class="arrow arrow-right" onclick="changeSlide(1)" aria-label="Next">&#8250;</button>
-  <div class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">5</span></div>
 
   <script>
     let current = 0;
     const slides = document.querySelectorAll('.slide');
     const total = slides.length;
-    document.getElementById('totalSlides').textContent = total;
 
     function changeSlide(dir) {
       slides[current].classList.remove('active');
       current = (current + dir + total) % total;
       slides[current].classList.add('active');
-      document.getElementById('currentSlide').textContent = current + 1;
     }
 
-    // Keyboard navigation
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') changeSlide(-1);
       if (e.key === 'ArrowRight') changeSlide(1);

@@ -10,37 +10,114 @@
   <link rel="stylesheet" href="../css/style.css">
   <style>
     .street-grid {
-      padding: 120px 32px 80px;
-      max-width: 1500px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
+  padding: 100px 16px 80px;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
 
-    .grid-item {
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
+.grid-item {
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+}
 
-    .grid-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+.grid-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .grid-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
 
-    .grid-item:hover img {
-      transform: scale(1.04);
-    }
+.grid-item:hover img {
+  transform: scale(1.04);
+}
+
+/* ── Lightbox ── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.92);
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.open {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+
+.lightbox-close:hover {
+  color: #fff;
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 20px;
+  transition: color 0.3s ease;
+  line-height: 1;
+  user-select: none;
+}
+
+.lightbox-arrow:hover {
+  color: #fff;
+}
+
+.lightbox-arrow.left {
+  left: 16px;
+}
+
+.lightbox-arrow.right {
+  right: 16px;
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.5);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
 
     @media (max-width: 900px) {
       .street-grid {
@@ -114,30 +191,121 @@
     <div class="grid-item"><img src="../images/street/photo6.jpg" alt="Street 6" loading="lazy"></div>
     <div class="grid-item"><img src="../images/street/photo7.jpg" alt="Street 7" loading="lazy"></div>
     <div class="grid-item"><img src="../images/street/photo8.jpg" alt="Street 8" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo9.jpg" alt="Street 9" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo10.jpg" alt="Street 10" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo11.jpg" alt="Street 11" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo12.jpg" alt="Street 12" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo13.jpg" alt="Street 13" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo14.jpg" alt="Street 14" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo15.jpg" alt="Street 15" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo16.jpg" alt="Street 16" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo17.jpg" alt="Street 17" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo18.jpg" alt="Street 18" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo19.jpg" alt="Street 19" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo20.jpg" alt="Street 20" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo21.jpg" alt="Street 21" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo22.jpg" alt="Street 22" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo23.jpg" alt="Street 23" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo24.jpg" alt="Street 24" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo25.jpg" alt="Street 25" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo26.jpg" alt="Street 26" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo27.jpg" alt="Street 27" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo28.jpg" alt="Street 28" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo29.jpg" alt="Street 29" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo30.jpg" alt="Street 30" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo31.jpg" alt="Street 31" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo32.jpg" alt="Street 32" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo33.jpg" alt="Street 33" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo34.jpg" alt="Street 34" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo35.jpg" alt="Street 35" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo36.jpg" alt="Street 36" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo37.jpg" alt="Street 37" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo38.jpg" alt="Street 38" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo39.jpg" alt="Street 39" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo40.jpg" alt="Street 40" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo41.jpg" alt="Street 41" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo42.jpg" alt="Street 42" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo43.jpg" alt="Street 43" loading="lazy"></div>
+    <div class="grid-item"><img src="../images/street/photo44.jpg" alt="Street 44" loading="lazy"></div>
   </main>
 
+  <!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+  <button class="lightbox-arrow left" onclick="navigateLightbox(-1)" aria-label="Previous">‹</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox-arrow right" onclick="navigateLightbox(1)" aria-label="Next">›</button>
+  <div class="lightbox-counter"><span id="lbCurrent">1</span> / <span id="lbTotal">1</span></div>
+</div>
+
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          // Stagger the animation based on position in the row
-          const items = Array.from(document.querySelectorAll('.grid-item'));
-          const index = items.indexOf(entry.target);
-          const delay = (index % 4) * 0.08;
-          entry.target.style.transitionDelay = delay + 's';
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const items = Array.from(document.querySelectorAll('.grid-item'));
+        const index = items.indexOf(entry.target);
+        const delay = (index % 4) * 0.08;
+        entry.target.style.transitionDelay = delay + 's';
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
 
-    document.querySelectorAll('.grid-item').forEach(item => observer.observe(item));
+  document.querySelectorAll('.grid-item').forEach(item => observer.observe(item));
 
-    function toggleMenu() {
-      document.querySelector('.hamburger').classList.toggle('open');
-      const nav = document.getElementById('mobileNav');
-      nav.classList.toggle('open');
-      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
-    }
-  </script>
+  // Lightbox
+  let lbIndex = 0;
+  const lbImages = Array.from(document.querySelectorAll('.grid-item img'));
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  const lbCurrent = document.getElementById('lbCurrent');
+  const lbTotal = document.getElementById('lbTotal');
+  lbTotal.textContent = lbImages.length;
+
+  document.querySelectorAll('.grid-item').forEach((item, i) => {
+    item.addEventListener('click', () => openLightbox(i));
+  });
+
+  function openLightbox(index) {
+    lbIndex = index;
+    lbImg.src = lbImages[lbIndex].src;
+    lbCurrent.textContent = lbIndex + 1;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function navigateLightbox(dir) {
+    lbIndex = (lbIndex + dir + lbImages.length) % lbImages.length;
+    lbImg.src = lbImages[lbIndex].src;
+    lbCurrent.textContent = lbIndex + 1;
+  }
+
+  // Keyboard controls
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navigateLightbox(-1);
+    if (e.key === 'ArrowRight') navigateLightbox(1);
+  });
+
+  // Click outside image to close
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    document.querySelector('.hamburger').classList.toggle('open');
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('open');
+    document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+  }
+</script>
 </body>
 </html>
