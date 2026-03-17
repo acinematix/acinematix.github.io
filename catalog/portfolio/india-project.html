@@ -229,91 +229,106 @@
     <p class="subtitle">Eventually, this collection will live as a photo book — for now, it grows here.</p>
   </section>
 
-  <!-- ======== BEGIN SECTION: Kushti Akhada ======== -->
-  <div class="project-section">
-    <div class="section-hero">
-      <div class="section-hero-image">
-        <img src="../../images/portfolio/india-project/kushti-hero.jpg" alt="Kushti Akhada">
-      </div>
-      <div class="section-hero-text">
-        <h2>Kushti Akhada</h2>
-        <p>— insert sub text</p>
-      </div>
-    </div>
-
-    <div class="section-gallery-wrap">
-      <div class="section-gallery gallery-3col">
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/kushti-1.jpg" alt="Kushti Akhada" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/kushti-2.jpg" alt="Kushti Akhada" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/kushti-3.jpg" alt="Kushti Akhada" loading="lazy"></div>
-      </div>
-      <div class="section-gallery gallery-4col">
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/kushti-4.jpg" alt="Kushti Akhada" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/kushti-5.jpg" alt="Kushti Akhada" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/kushti-6.jpg" alt="Kushti Akhada" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/kushti-7.jpg" alt="Kushti Akhada" loading="lazy"></div>
-      </div>
-    </div>
-  </div>
-  <!-- ======== END SECTION: Kushti Akhada ======== -->
-
-  <!-- ======== BEGIN SECTION: Dhobi Ghatt ======== -->
-  <div class="project-section">
-    <div class="section-hero">
-      <div class="section-hero-image">
-        <img src="../../images/portfolio/india-project/dhobi-hero.jpg" alt="Dhobi Ghatt">
-      </div>
-      <div class="section-hero-text">
-        <h2>Dhobi Ghatt</h2>
-        <p>— insert subtext</p>
-      </div>
-    </div>
-
-    <div class="section-gallery-wrap">
-      <div class="section-gallery gallery-3col">
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-1.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-2.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-3.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-4.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-5.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-6.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-7.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-8.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-9.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-10.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-11.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/dhobi-12.jpg" alt="Dhobi Ghatt" loading="lazy"></div>
-      </div>
-    </div>
-  </div>
-  <!-- ======== END SECTION: Dhobi Ghatt ======== -->
-
-  <!-- ======== BEGIN SECTION: Sasoon Dock ======== -->
-  <div class="project-section">
-    <div class="section-hero">
-      <div class="section-hero-image">
-        <img src="../../images/portfolio/india-project/sasoon-hero.jpg" alt="Sasoon Dock">
-      </div>
-      <div class="section-hero-text">
-        <h2>Sasoon Dock</h2>
-        <p>— insert subtext</p>
-      </div>
-    </div>
-
-    <div class="section-gallery-wrap">
-      <div class="section-gallery gallery-3col">
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/sasoon-1.jpg" alt="Sasoon Dock" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/sasoon-2.jpg" alt="Sasoon Dock" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/sasoon-3.jpg" alt="Sasoon Dock" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/sasoon-4.jpg" alt="Sasoon Dock" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/sasoon-5.jpg" alt="Sasoon Dock" loading="lazy"></div>
-        <div class="gallery-img"><img src="../../images/portfolio/india-project/sasoon-6.jpg" alt="Sasoon Dock" loading="lazy"></div>
-      </div>
-    </div>
-  </div>
-  <!-- ======== END SECTION: Sasoon Dock ======== -->
+  <div id="sections-container"></div>
 
   <script>
+    // ── SECTION CONFIG ──
+    // To add a new section: add an object to this array.
+    // - title: section heading
+    // - subtitle: text below heading
+    // - hero: hero image filename
+    // - prefix: image filename prefix (e.g. "kushti" → kushti-1.jpg, kushti-2.jpg, ...)
+    // - galleries: array of { cols: 3|4, count: N } — generates prefix-1.jpg through prefix-N.jpg
+    //   OR use "images" for custom filenames: { cols: 3, images: ["custom-a.jpg", "custom-b.jpg"] }
+    // - comingSoon: true — shows placeholder instead of gallery
+
+    const basePath = '../../images/portfolio/india-project/';
+
+    const sections = [
+      {
+        title: 'Kushti Akhada',
+        subtitle: "Akhadas are more than wrestling gyms — they're part temple, part school, part living archive of a tradition that goes back over two thousand years. This one is among Mumbai's last. The soil in the pit is sacred — mixed with turmeric, lemon, and ghee for healing. Wrestlers cover themselves in it before every match, both for grip and as an act of reverence to the earth. The instructors and students I met train this way because the practice itself is the point. Discipline, spirituality, community. Modern mat wrestling has taken over professionally, but the mud pit is where it all begins. They welcomed me in without hesitation. No audience, no recognition. Just the work, passed down and kept alive.",
+        hero: 'kushti-hero.jpg',
+        prefix: 'kushti',
+        galleries: [
+          { cols: 3, count: 3 },
+          { cols: 4, start: 4, count: 4 }
+        ]
+      },
+      {
+        title: 'Dhobi Ghatt',
+        subtitle: "At Dhobi Ghat, I found more than a maze of laundry — I found a living system shaped by rhythm, labor, and generations of unseen hands. This project blends motion and stillness: garments in constant circulation across Mumbai, and portraits of the people who sustain it with quiet precision. In a city of extremes, Dhobi Ghat runs with an almost timeless efficiency — a place I entered as an observer, but left with a deeper sense of the lives and stories woven into every piece of fabric.",
+        hero: 'dhobi-hero.jpg',
+        prefix: 'dhobi',
+        galleries: [
+          { cols: 3, count: 12 }
+        ]
+      },
+      {
+        title: 'Sasoon Dock',
+        subtitle: '— insert subtext',
+        hero: 'sasoon-hero.jpg',
+        prefix: 'sasoon',
+        comingSoon: true
+      }
+    ];
+
+    // ── RENDER ──
+    function renderSections() {
+      const container = document.getElementById('sections-container');
+
+      sections.forEach(section => {
+        const div = document.createElement('div');
+        div.className = 'project-section';
+
+        // Hero
+        let html = `
+          <div class="section-hero">
+            <div class="section-hero-image">
+              <img src="${basePath}${section.hero}" alt="${section.title}">
+            </div>
+            <div class="section-hero-text">
+              <h2>${section.title}</h2>
+              <p>${section.subtitle}</p>
+            </div>
+          </div>`;
+
+        // Gallery
+        html += '<div class="section-gallery-wrap">';
+
+        if (section.comingSoon) {
+          html += '<p style="font-family:var(--font-body);font-size:0.9rem;color:var(--color-text-muted);letter-spacing:0.03em;text-align:center;padding:40px 24px;">Gallery coming soon.</p>';
+        } else if (section.galleries) {
+          section.galleries.forEach(gallery => {
+            const colClass = gallery.cols === 4 ? 'gallery-4col' : 'gallery-3col';
+            html += `<div class="section-gallery ${colClass}">`;
+
+            if (gallery.images) {
+              // Custom filenames
+              gallery.images.forEach(img => {
+                html += `<div class="gallery-img"><img src="${basePath}${img}" alt="${section.title}" loading="lazy"></div>`;
+              });
+            } else {
+              // Auto-numbered: prefix-N.jpg
+              const start = gallery.start || 1;
+              for (let i = start; i < start + gallery.count; i++) {
+                html += `<div class="gallery-img"><img src="${basePath}${section.prefix}-${i}.jpg" alt="${section.title}" loading="lazy"></div>`;
+              }
+            }
+
+            html += '</div>';
+          });
+        }
+
+        html += '</div>';
+        div.innerHTML = html;
+        container.appendChild(div);
+      });
+    }
+
+    renderSections();
+
+    // ── SCROLL ANIMATIONS ──
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
